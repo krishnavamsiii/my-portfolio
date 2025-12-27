@@ -60,7 +60,7 @@
 
   /* ================== MOBILE RESPONSIVE ================== */
   /* On smaller screens hide sidebar initially */
-  @media (max-width: 1199px){
+  /* @media (max-width: 1199px){
     #header{
       left:-300px;
     }
@@ -71,7 +71,18 @@
     .mobile-nav-toggle{
       display:block;
     }
+  } */
+
+  @media (max-width: 991px){
+  #header{
+    left:-300px;
   }
+
+  #main{
+    margin-left:0;
+  }
+}
+
 
   /* Show sidebar when active */
   .mobile-nav-active #header{
