@@ -3,8 +3,8 @@
   padding: 20px;
 } */
 
-#main-content {
-  margin-left: 270px; /* same as sidebar width */
+/* #main-content {
+  margin-left: 270px; 
   padding: 20px;
 }
 
@@ -19,4 +19,44 @@
 
 .mobile-nav-active #header {
   left:0;
+} */
+
+
+/* ================= DESKTOP ================= */
+#header{
+  width:300px;
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+}
+
+#main-content{
+  margin-left:300px;
+  padding:20px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width: 991px){
+
+  #main-content{
+    margin-left:0;
+  }
+
+  #header{
+    left:-300px;
+    z-index:9999;
+  }
+
+  .mobile-nav-active #header{
+    left:0;
+  }
+
+  .mobile-nav-active::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    z-index:9000;
+  }
 }
