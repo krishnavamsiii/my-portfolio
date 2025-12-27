@@ -32,7 +32,7 @@ type Education = { degree: string; college: string; period: string; bullets?: Bu
 
 export class Resume {
 
-  cvUrl = 'assets/krishnaResume.pdf';
+  cvUrl = 'assets/krishnaResumeNew.pdf';
 
   summary = {
     name: 'KRISHNA VAMSI',
