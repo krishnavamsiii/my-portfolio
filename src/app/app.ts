@@ -18,6 +18,12 @@ import * as AOS from 'aos';
 })
 export class App {
   ngonInit() {
+
+    const toggle = document.querySelector(".mobile-nav-toggle");
+
+  toggle?.addEventListener("click", () => {
+    document.body.classList.toggle("mobile-nav-active");
+  });
   
     AOS.init();
 // {      
