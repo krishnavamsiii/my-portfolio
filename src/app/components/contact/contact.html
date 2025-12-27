@@ -1,0 +1,100 @@
+<!-- 
+<div class="form-wrapper">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-grid">
+  
+    <mat-form-field appearance="outline" class="field">
+      <mat-label>Your Name</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error *ngIf="f['name'].touched && f['name'].errors">Name is required.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="field">
+      <mat-label>Your Email</mat-label>
+      <input matInput type="email" formControlName="email" />
+      <mat-error *ngIf="f['email'].touched && f['email'].errors">Valid email required.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="field full">
+      <mat-label>Subject</mat-label>
+      <input matInput formControlName="subject" />
+      <mat-error *ngIf="f['subject'].touched && f['subject'].errors">Subject is required.</mat-error>
+    </mat-form-field>
+
+   
+    <mat-form-field appearance="outline" class="field full">
+      <mat-label>Message</mat-label>
+      <textarea matInput row+
+    
+      
+      ="6" formControlName="message"></textarea>
+      <mat-error *ngIf="f['message'].touched && f['message'].errors">Message is required.</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="actions">
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || sending()">
+      <span *ngIf="!sending()">Send Message</span>
+      <span *ngIf="sending()">Sending…</span>
+    </button>
+  </div>
+</form>
+</div> -->
+
+
+<section id="certifications">
+  <h2>Certifications</h2>
+
+  <div class="cert-container">
+
+    <div class="cert-block">
+      <h3>Core Java</h3>
+      <p>HackerRank Certified</p>
+    </div>
+
+    <div class="cert-block">
+      <h3>Microsoft Azure Fundamentals</h3>
+      <p>AZ-900 — Microsoft Certified</p>
+    </div>
+
+    <div class="cert-block">
+      <h3>Angular Specialization</h3>
+      <p>Complete Angular + Angular Deeper Dive — Udemy</p>
+    </div>
+
+    <div class="cert-block">
+      <h3>Gen AI Essentials</h3>
+      <p>Udemy Certified</p>
+    </div>
+
+    <div class="cert-block">
+      <h3>AWS Cloud Practitioner</h3>
+      <p>Udemy Certified</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="awards">
+  <h2>Awards & Recognitions</h2>
+
+  <div class="award-container">
+
+    <div class="award-block">
+      <h3>Zero Defect Delivery</h3>
+      <p>Successfully delivered Staff Quarters Allocation module with zero defects within the committed timeline.</p>
+    </div>
+
+    <div class="award-block">
+      <h3>Fund Application Delivery Excellence</h3>
+      <p>Completed Fund Request Application ahead of schedule while maintaining a 100% QA pass rate.</p>
+    </div>
+
+    <div class="award-block">
+      <h3>Star of the Quarter</h3>
+      <p>Recognized for outstanding performance, ownership, and contribution to project success.</p>
+    </div>
+
+  </div>
+</section>
+

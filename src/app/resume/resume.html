@@ -1,0 +1,98 @@
+<section id="resume" class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-4">
+    <h2 class="mb-0 section-title">Resume</h2>
+    <div class="btn-group">
+      <a [href]="cvUrl" target="_blank" rel="noopener" class="btn btn-outline-secondary">
+        <i class="bi bi-box-arrow-up-right me-1"></i> View CV
+      </a>
+      <a [href]="cvUrl" download class="btn btn-primary">
+        <i class="bi bi-download me-1"></i> Download
+      </a>
+    </div>
+  </div>
+     
+  <div class="row g-5">
+    <!-- LEFT COLUMN -->
+    <div class="col-lg-6">
+      <!-- Summary -->
+      <h3 class="resume-heading">Summary</h3>
+      <div class="resume-item">
+        <h4 class="mb-1">{{ summary.name }}</h4>
+        <p class="fst-italic mb-2">{{ summary.tagline }}</p>
+        <ul class="mb-0">
+          <li *ngFor="let s of summary.bullets">{{ s }}</li>
+        </ul>
+      </div>
+
+      <!-- Education -->
+      <h3 class="resume-heading mt-4">Education</h3>
+      <div class="resume-item" *ngFor="let ed of education">
+        <h4 class="mb-1">{{ ed.degree }}</h4>
+        <h5 class="period badge bg-light text-dark">{{ ed.period }}</h5>
+        <p class="mb-1 fw-medium">{{ ed.college }}</p>
+        <ul class="mb-0" *ngIf="ed.bullets?.length">
+          <li *ngFor="let b of ed.bullets">{{ b }}</li>
+        </ul>
+      </div>
+ <h3 class="resume-heading mt-4">Personal Projects</h3>
+ <div class="resume-item" *ngFor="let proj of Personalprojects">
+        <h4 class="mb-1">{{ proj.name}}</h4>
+        <ul class="mb-0" *ngIf="proj.details?.length">
+          <li *ngFor="let d of proj.details">{{ d }}</li>
+          </ul>
+
+ </div>
+      <!-- Personal Projects -->
+
+
+
+
+
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+   <div class="col-lg-6">
+
+  <!-- EXPERIENCE SECTION -->
+  <h3 class="resume-heading">Professional Experience</h3>
+  <div class="resume-item" *ngFor="let ex of experience">
+    
+    <h4 class="mb-1">{{ ex.title }}</h4>
+    <h5 class="period badge bg-light text-dark">{{ ex.period }}</h5>
+
+    <p class="mb-1 text-muted" *ngIf="ex.company || ex.location">
+      <i class="bi bi-building me-1"></i>{{ ex.company }}
+      <span *ngIf="ex.location" class="ms-2">
+        <i class="bi bi-geo-alt me-1"></i>{{ ex.location }}
+      </span>
+    </p>
+
+    <ul class="mb-0">
+      <li *ngFor="let b of ex.bullets">{{ b }}</li>
+    </ul>
+
+  </div> 
+
+  <!-- PROJECT SECTION -->
+  <h3 class="resume-heading">Projects</h3>
+  <div class="resume-item" *ngFor="let ex of experience">
+
+    <div *ngFor="let proj of ex.projects" class="mb-3">
+
+      <h4 class="mb-1">{{ proj.name }}</h4>
+
+      <ul>
+        <li *ngFor="let d of proj.details">{{ d }}</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+</section>

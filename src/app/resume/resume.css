@@ -1,0 +1,46 @@
+/* Section */
+.section-title { font-weight: 800; }
+
+/* Headings inside the two columns */
+.resume-heading {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* iPortfolio-like timeline: left border + circle marker */
+.resume-item {
+  position: relative;
+  padding: 0 0 1.2rem 1.25rem; /* left indent for the line/dot */
+  border-left: 2px solid #0d6efd20; /* faint line */
+  margin-left: .9rem;
+}
+
+.resume-item::before {
+  content: '';
+  position: absolute;
+  left: -7px;                /* aligns circle on the line */
+  top: .35rem;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border: 3px solid #0d6efd; /* blue ring */
+  border-radius: 50%;
+}
+
+.resume-item + .resume-item {
+  margin-top: 1.2rem;
+}
+
+.period {
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+/* Lists */
+.resume-item ul { padding-left: 1.1rem; }
+.resume-item li { margin-bottom: .4rem; }
+
+/* Responsive tweaks */
+@media (max-width: 991.98px) { /* < lg */
+  .resume-item { margin-left: 0.25rem; }
+}

@@ -1,0 +1,9 @@
+/* #resume, #about, #contact, #home {
+  margin-left: 260px;  
+  padding: 20px;
+} */
+
+#main-content {
+  margin-left: 270px; /* same as sidebar width */
+  padding: 20px;
+}
