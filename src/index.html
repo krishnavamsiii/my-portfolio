@@ -122,14 +122,37 @@
 
 <!-- Mobile Sidebar Toggle Script -->
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.querySelector(".mobile-nav-toggle");
+document.addEventListener("DOMContentLoaded", function () {
 
-    toggle?.addEventListener("click", function () {
-      document.body.classList.toggle("mobile-nav-active");
+  const body = document.body;
+  const toggle = document.querySelector(".mobile-nav-toggle");
+  const navLinks = document.querySelectorAll("#navbar a");
+
+  // Toggle Sidebar
+  toggle?.addEventListener("click", function () {
+    body.classList.toggle("mobile-nav-active");
+  });
+
+  // Close when clicking any menu item
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      body.classList.remove("mobile-nav-active");
     });
   });
+
+  // Close when clicking outside sidebar (overlay area)
+  document.addEventListener("click", function(e){
+    if(body.classList.contains("mobile-nav-active")){
+      const header = document.getElementById("header");
+      if(!header.contains(e.target) && !toggle.contains(e.target)){
+        body.classList.remove("mobile-nav-active");
+      }
+    }
+  });
+
+});
 </script>
+
 
 </body>
 </html>
