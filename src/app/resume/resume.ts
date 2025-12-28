@@ -38,6 +38,7 @@ export class Resume {
     name: 'KRISHNA VAMSI',
     tagline: 'Full Stack Developer (Angular + Spring Boot) | 3 Years of Experience ',
     bullets: [
+      'Full Stack Java Developer with 3.2+ years of experience in Java, Spring Boot, Angular,REST APIS and MicroServices. Contributed to 10+ enterprise applications. Additionally explored GenAI by building personal projects and prototypes to enhance automation, productivity, and intelligent application capabilities.”',
       'Hyderabad, IN',
       'mudiamkrishnavamsi@gmail.com',
       '+91 8185091339'

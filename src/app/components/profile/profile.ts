@@ -14,10 +14,10 @@ export class Profile {
 
     @Input() name = 'Krishna Vamsi';
       @Input() roles: string[] = [
-    'Frontend Developer',
+    'Full Stack Java Developer',
     'Angular Programmer',
     'Bootstrap Enthusiast',
-    'Full-Stack Learner'
+    'Gen AI Enthusiast'
   ];
 
  ngOnInit(): void {
