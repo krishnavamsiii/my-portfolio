@@ -5,6 +5,7 @@
   <title>MyPortfolio</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <!-- Bootstrap -->
@@ -23,104 +24,17 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Poppins" rel="stylesheet">
-
-  <style>
-
-  /* ================== COLORS ================== */
-  :root{
-    --primary-color:#149ddd;
-    --secondary-color:#173b6c;
-    --background-light:#f5f8fd;
-  }
-
-  body{
-    font-family:"Open Sans",sans-serif;
-    color:#272829;
-    overflow-x:hidden;
-  }
-
-  /* ================== SIDEBAR ================== */
-  #header{
-    position:fixed;
-    top:0;
-    left:0;
-    bottom:0;
-    width:300px;
-    padding:15px;
-    background:#040b14;
-    z-index:9997;
-    overflow-y:auto;
-    transition:0.5s;
-  }
-
-  #main{
-    margin-left:300px;
-    transition:0.5s;
-  }
-
-  /* ================== MOBILE RESPONSIVE ================== */
-  /* On smaller screens hide sidebar initially */
-  /* @media (max-width: 1199px){
-    #header{
-      left:-300px;
-    }
-    #main{
-      margin-left:0;
-    }
-
-    .mobile-nav-toggle{
-      display:block;
-    }
-  } */
-
-  /* @media (max-width: 767px){
-  #header{
-    left:-300px;
-  }
-
-  #main{
-    margin-left:0;
-  }
-} */
-
-
-  /* Show sidebar when active */
-  /* .mobile-nav-active #header{
-    left:0;
-  } */
-   /* .mobile-nav-active #main {
-  margin-left:300px;
-} */
-
-
-  /* Hamburger Icon */
-  /* .mobile-nav-toggle{
-    position:fixed;
-    right:15px;
-    top:15px;
-    font-size:28px;
-    cursor:pointer;
-    z-index:10000;
-    color:#fff;
-    background:#149ddd;
-    border-radius:50%;
-    padding:8px;
-    display:none;
-  } */
-
-  </style>
-
 </head>
 
 <body>
 
-<!-- HAMBURGER BUTTON (Visible only on mobile) -->
+<!-- HAMBURGER ICON (works on mobile only) -->
 <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
 <!-- Angular App -->
 <app-root></app-root>
 
-<!-- Mobile Sidebar Toggle Script -->
+<!-- Sidebar Toggle Script -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -128,23 +42,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.querySelector(".mobile-nav-toggle");
   const navLinks = document.querySelectorAll("#navbar a");
 
-  // Toggle Sidebar
+  // Toggle sidebar open/close
   toggle?.addEventListener("click", function () {
     body.classList.toggle("mobile-nav-active");
   });
 
-  // Close when clicking any menu item
+  // Close sidebar when clicking a nav item
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
       body.classList.remove("mobile-nav-active");
     });
   });
 
-  // Close when clicking outside sidebar (overlay area)
+  // Close when clicking outside sidebar
   document.addEventListener("click", function(e){
     if(body.classList.contains("mobile-nav-active")){
       const header = document.getElementById("header");
-      if(!header.contains(e.target) && !toggle.contains(e.target)){
+      if(header && !header.contains(e.target) && !toggle.contains(e.target)){
         body.classList.remove("mobile-nav-active");
       }
     }
@@ -152,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
-
 
 </body>
 </html>

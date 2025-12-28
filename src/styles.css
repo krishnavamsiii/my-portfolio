@@ -2,3 +2,132 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* ================= COLORS ================= */
+:root{
+  --primary-color:#149ddd;
+  --secondary-color:#173b6c;
+}
+
+/* ================= GLOBAL ================= */
+body{
+  font-family:"Open Sans",sans-serif;
+  color:#272829;
+  overflow-x:hidden;
+}
+
+
+
+/* ================= HEADER (LEFT SIDEBAR) ================= */
+#header{
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  width:300px;
+  padding:15px;
+  background:#040b14;
+  overflow-y:auto;
+  z-index:9999;
+  transition:0.4s;
+}
+
+
+/* ===== PROFILE SECTION ===== */
+#header .profile{
+  text-align:center;
+}
+
+#header .profile img{
+  margin:15px auto;
+  display:block;
+  width:120px;
+  border:8px solid #2c2f3f;
+  border-radius:50%;
+}
+
+#header .profile h1{
+  font-size:24px;
+  margin:10px 0 0 0;
+  font-weight:600;
+  color:#fff;
+}
+
+/* ===== SOCIAL ICONS ===== */
+#header .profile .social-links a{
+  font-size:18px;
+  display:inline-block;
+  background:#212431;
+  color:#fff;
+  line-height:1;
+  padding:8px 0;
+  margin-right:4px;
+  border-radius:50%;
+  text-align:center;
+  width:36px;
+  height:36px;
+  transition:0.3s;
+}
+
+#header .profile .social-links a:hover{
+  background:#149ddd;
+  color:#fff;
+}
+
+
+
+/* ================= MAIN AREA ================= */
+#main-content{
+  margin-left:300px;
+  padding:20px;
+  transition:0.4s;
+}
+
+
+
+/* ================= MOBILE MODE ================= */
+@media(max-width:991px){
+
+  #main-content{
+    margin-left:0;
+    padding-top:20px;
+  }
+
+  #header{
+    left:-300px;
+  }
+
+  body.mobile-nav-active #header{
+    left:0;
+  }
+
+  body.mobile-nav-active::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    z-index:9000;
+  }
+}
+
+
+
+/* ================= HAMBURGER BUTTON ================= */
+.mobile-nav-toggle{
+  position:fixed;
+  right:15px;
+  top:15px;
+  font-size:28px;
+  cursor:pointer;
+  z-index:10000;
+  color:#fff;
+  background:#149ddd;
+  border-radius:50%;
+  padding:8px;
+  display:none;
+}
+
+@media(max-width:991px){
+  .mobile-nav-toggle{
+    display:block;
+  }
+}
