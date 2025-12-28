@@ -36,36 +36,45 @@
 
 <!-- Sidebar Toggle Script -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+function initMobileMenu() {
 
   const body = document.body;
   const toggle = document.querySelector(".mobile-nav-toggle");
+  const header = document.getElementById("header");
   const navLinks = document.querySelectorAll("#navbar a");
 
-  // Toggle sidebar open/close
-  toggle?.addEventListener("click", function () {
+  if(!toggle || !header){
+    // Angular may not have finished rendering — retry
+    setTimeout(initMobileMenu, 200);
+    return;
+  }
+
+  // Toggle Sidebar
+  toggle.addEventListener("click", function (event) {
+    event.stopPropagation();
     body.classList.toggle("mobile-nav-active");
   });
 
-  // Close sidebar when clicking a nav item
+  // Close when clicking menu item
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
       body.classList.remove("mobile-nav-active");
     });
   });
 
-  // Close when clicking outside sidebar
+  // Close on outside click
   document.addEventListener("click", function(e){
     if(body.classList.contains("mobile-nav-active")){
-      const header = document.getElementById("header");
-      if(header && !header.contains(e.target) && !toggle.contains(e.target)){
+      if(!header.contains(e.target) && !toggle.contains(e.target)){
         body.classList.remove("mobile-nav-active");
       }
     }
   });
+}
 
-});
+document.addEventListener("DOMContentLoaded", initMobileMenu);
 </script>
+
 
 </body>
 </html>
